@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Animated Background</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <section>
+        <h2>Animation</h2>
+        <div class="banner">
+            <div class="block">
+
+            </div>
+        </div>
+    </section>
+
+        
+        <script>
+            const banner = document.getElementsByClassName('banner')[0];
+            const block = document.getElementsByClassName('block');
+            for (var i = 1; i < 400; i++){
+                banner.innerHTML += "<div class='block'></div>";
+                const duration = Math.random() * 5;
+                block[i].style.animationDuration = 2+duration + 's';
+                block[i].style.animationDelay = duration+'s';
+            }
+ 
+            const section = document.querySelector('section');
+            setTimeout(function(){
+              section.classList.add('active')
+            },10000) //add class active after 14 seconds 
+        </script>
+    </body>
+</html>
